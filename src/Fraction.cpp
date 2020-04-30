@@ -43,6 +43,15 @@ Fraction &Fraction::simplify(void)
     return *this;
 }
 
+Fraction &Fraction::reciprocal(void)
+{
+    int tmp = m_numerator;
+    m_numerator = m_denominator;
+    m_denominator = tmp;
+
+    return *this;
+}
+
 int Fraction::calcGCD(int n1, int n2)
 {
     while (n2 > 0)
@@ -79,6 +88,22 @@ Fraction Fraction::operator*(const Fraction& rhs) const
 {
     Fraction result(*this);
     return result *= rhs;
+}
+
+Fraction &Fraction::operator/=(const Fraction& rhs)
+{
+    m_numerator *= rhs.m_denominator;
+    m_denominator *= rhs.m_numerator;
+
+    simplify();
+
+    return *this;
+}
+
+Fraction Fraction::operator/(const Fraction& rhs) const
+{
+    Fraction result(*this);
+    return result /= rhs;
 }
 
 std::ostream &operator<<(std::ostream &out, const Fraction &fraction)

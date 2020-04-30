@@ -34,10 +34,13 @@ public:
     inline void setDenominator(int denominator) { m_denominator = denominator; };
 
     Fraction &simplify(void);
+    Fraction &reciprocal(void);
 
     Fraction &operator=(const Fraction &rhs);
     Fraction &operator*=(const Fraction &rhs);
     Fraction operator*(const Fraction &rhs) const;
+    Fraction &operator/=(const Fraction &rhs);
+    Fraction operator/(const Fraction &rhs) const;
 
 private:
     int calcGCD(int n1, int n2);
