@@ -57,8 +57,23 @@ public:
     Fraction &operator-=(int rhs);
     Fraction operator-(int rhs) const;
 
+    bool operator==(const Fraction &rhs);
+    bool operator!=(const Fraction &rhs);
+    bool operator>(const Fraction &rhs);
+    bool operator<(const Fraction &rhs);
+    bool operator>=(const Fraction &rhs);
+    bool operator<=(const Fraction &rhs);
+
+    bool operator==(int rhs);
+    bool operator!=(int rhs);
+    bool operator>(int rhs);
+    bool operator<(int rhs);
+    bool operator>=(int rhs);
+    bool operator<=(int rhs);
+
 private:
     int calcGCD(int n1, int n2);
+    int compare(const Fraction &fraction);
 
     int m_numerator;
     int m_denominator;

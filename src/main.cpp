@@ -24,11 +24,20 @@ int main(void)
     Fraction a(2, 10);
     Fraction b(3, 7);
 
-    std::cout << "Simplify: " << a << " => " << a.simplify() << std::endl;
-    std::cout << "Multiply: " << a << " * " << b << " = " << a * b << std::endl;
-    std::cout << "Division: " << a << " / " << b << " = " << a / b << std::endl;
-    std::cout << "Addition: " << a << " + " << b << " = " << a + b << std::endl;
-    std::cout << "Subtraction: " << a << " - " << b << " = " << a - b << std::endl;
+    std::cout << "Simplify: " << a << " => " << a.simplify() << std::endl
+              << "Multiply: " << a << " * " << b << " = " << a * b << std::endl
+              << "Division: " << a << " / " << b << " = " << a / b << std::endl
+              << "Addition: " << a << " + " << b << " = " << a + b << std::endl
+              << "Subtraction: " << a << " - " << b << " = " << a - b << std::endl
+              << std::endl;
+
+    std::cout << a << " == " << b << " => " << (a == b ? "true" : "false") << std::endl
+              << a << " != " << b << " => " << (a != b ? "true" : "false") << std::endl
+              << a << " > " << b << " => " << (a > b ? "true" : "false") << std::endl
+              << a << " < " << b << " => " << (a < b ? "true" : "false") << std::endl
+              << a << " >= " << b << " => " << (a >= b ? "true" : "false") << std::endl
+              << a << " <= " << b << " => " << (a <= b ? "true" : "false") << std::endl
+              << std::endl;
 
     return 0;
 }
