@@ -29,6 +29,7 @@ public:
 
     inline int numerator(void) const { return m_numerator; };
     inline int denominator(void) const { return m_denominator; };
+    inline int sign(void) const { return ((m_numerator >= 0 && m_denominator >= 0) || (m_numerator <= 0 && m_denominator <= 0)) ? 1 : -1 ; };
 
     inline void setNumerator(int numerator) { m_numerator = numerator; };
     inline void setDenominator(int denominator) { m_denominator = denominator; };
@@ -45,6 +46,16 @@ public:
     Fraction operator+(const Fraction &rhs) const;
     Fraction &operator-=(const Fraction &rhs);
     Fraction operator-(const Fraction &rhs) const;
+
+    Fraction &operator=(int rhs);
+    Fraction &operator*=(int rhs);
+    Fraction operator*(int rhs) const;
+    Fraction &operator/=(int rhs);
+    Fraction operator/(int rhs) const;
+    Fraction &operator+=(int rhs);
+    Fraction operator+(int rhs) const;
+    Fraction &operator-=(int rhs);
+    Fraction operator-(int rhs) const;
 
 private:
     int calcGCD(int n1, int n2);
