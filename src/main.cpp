@@ -15,9 +15,17 @@
  * along with this program. If not, see <http://www.gnu.org/licenses/>.
 */
 
+#include <iostream>
+
 #include "Fraction.h"
 
 int main(void)
 {
+    Fraction a(2, 10);
+
+    a.simplify();
+
+    std::cout << a;
+
     return 0;
 }

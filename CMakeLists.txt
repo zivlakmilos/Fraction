@@ -29,6 +29,8 @@ include_directories(include/)
 include_directories(${CMAKE_BINARY_DIR})
 
 set(project_SRC
+    src/Fraction.cpp
+
     src/main.cpp
 )
 

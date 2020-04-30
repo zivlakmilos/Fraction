@@ -17,10 +17,53 @@
 
 #include "Fraction.h"
 
-Fraction::Fraction(int numenator, int denominator)
+Fraction::Fraction(int numerator, int denominator)
+    : m_numerator(numerator),
+      m_denominator(denominator)
 {
 }
 
 Fraction::~Fraction(void)
 {
+}
+
+Fraction &Fraction::simplify(void)
+{
+    int gcd = calcGCD(m_numerator, m_denominator);
+
+    m_numerator /= gcd;
+    m_denominator /= gcd;
+
+    return *this;
+}
+
+int Fraction::calcGCD(int n1, int n2)
+{
+    while (n2 > 0)
+    {
+        int tmp1 = n1;
+        int tmp2 = n2;
+
+        n1 = tmp2;
+        n2 = tmp1 % tmp2;
+    }
+
+    return n1;
+}
+
+std::ostream &operator<<(std::ostream &out, const Fraction &fraction)
+{
+    if (fraction.numerator() == 0)
+    {
+        out << "0";
+    }
+    else if (fraction.denominator() == 1)
+    {
+        out << fraction.numerator();
+    }
+    else
+    {
+        out << fraction.numerator() << "/" << fraction.denominator();
+    }
+    return out;
 }

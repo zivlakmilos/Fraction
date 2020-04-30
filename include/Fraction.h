@@ -18,15 +18,29 @@
 #ifndef _FRACTION_H_
 #define _FRACTION_H_
 
+#include <iostream>
+
 class Fraction
 {
 public:
     Fraction(int numerator = 0, int denominator = 1);
     virtual ~Fraction(void);
 
+    inline int numerator(void) const { return m_numerator; };
+    inline int denominator(void) const { return m_denominator; };
+
+    inline void setNumerator(int numerator) { m_numerator = numerator; };
+    inline void setDenominator(int denominator) { m_denominator = denominator; };
+
+    Fraction &simplify(void);
+
 private:
-    int numerator;
-    int denominator;
+    int calcGCD(int n1, int n2);
+
+    int m_numerator;
+    int m_denominator;
 };
+
+std::ostream &operator<<(std::ostream &out, const Fraction &fraction);
 
 #endif // _FRACTION_H_
