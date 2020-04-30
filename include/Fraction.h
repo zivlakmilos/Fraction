@@ -41,6 +41,10 @@ public:
     Fraction operator*(const Fraction &rhs) const;
     Fraction &operator/=(const Fraction &rhs);
     Fraction operator/(const Fraction &rhs) const;
+    Fraction &operator+=(const Fraction &rhs);
+    Fraction operator+(const Fraction &rhs) const;
+    Fraction &operator-=(const Fraction &rhs);
+    Fraction operator-(const Fraction &rhs) const;
 
 private:
     int calcGCD(int n1, int n2);

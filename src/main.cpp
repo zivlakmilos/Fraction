@@ -24,7 +24,7 @@ int main(void)
     Fraction a(2, 10);
     Fraction b(3, 5);
 
-    std::cout << a / b;
+    std::cout << a - b;
 
     return 0;
 }
