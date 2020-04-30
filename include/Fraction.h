@@ -24,6 +24,7 @@ class Fraction
 {
 public:
     Fraction(int numerator = 0, int denominator = 1);
+    Fraction(const Fraction &fraction);
     virtual ~Fraction(void);
 
     inline int numerator(void) const { return m_numerator; };
@@ -33,6 +34,10 @@ public:
     inline void setDenominator(int denominator) { m_denominator = denominator; };
 
     Fraction &simplify(void);
+
+    Fraction &operator=(const Fraction &rhs);
+    Fraction &operator*=(const Fraction &rhs);
+    Fraction operator*(const Fraction &rhs) const;
 
 private:
     int calcGCD(int n1, int n2);

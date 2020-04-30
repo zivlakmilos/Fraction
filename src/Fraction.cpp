@@ -23,6 +23,12 @@ Fraction::Fraction(int numerator, int denominator)
 {
 }
 
+Fraction::Fraction(const Fraction &fraction)
+    : m_numerator(fraction.numerator()),
+      m_denominator(fraction.denominator())
+{
+}
+
 Fraction::~Fraction(void)
 {
 }
@@ -49,6 +55,30 @@ int Fraction::calcGCD(int n1, int n2)
     }
 
     return n1;
+}
+
+Fraction &Fraction::operator=(const Fraction &rhs)
+{
+    m_numerator = rhs.m_numerator;
+    m_denominator = rhs.m_denominator;
+
+    return *this;
+}
+
+Fraction &Fraction::operator*=(const Fraction& rhs)
+{
+    m_numerator *= rhs.m_numerator;
+    m_denominator *= rhs.m_denominator;
+
+    simplify();
+
+    return *this;
+}
+
+Fraction Fraction::operator*(const Fraction& rhs) const
+{
+    Fraction result(*this);
+    return result *= rhs;
 }
 
 std::ostream &operator<<(std::ostream &out, const Fraction &fraction)
