@@ -17,7 +17,7 @@
 
 #include <iostream>
 
-#include "Fraction.h"
+#include <fraction.h>
 
 int main(void)
 {

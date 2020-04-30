@@ -8,7 +8,7 @@ C++ Fraction library
 ```
 #include <iostream>
 
-#include "Fraction.h"
+#include <Fraction.h>
 
 int main(void)
 {
