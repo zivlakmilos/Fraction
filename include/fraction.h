@@ -57,23 +57,23 @@ public:
     Fraction &operator-=(int rhs);
     Fraction operator-(int rhs) const;
 
-    bool operator==(const Fraction &rhs);
-    bool operator!=(const Fraction &rhs);
-    bool operator>(const Fraction &rhs);
-    bool operator<(const Fraction &rhs);
-    bool operator>=(const Fraction &rhs);
-    bool operator<=(const Fraction &rhs);
+    bool operator==(const Fraction &rhs) const;
+    bool operator!=(const Fraction &rhs) const;
+    bool operator>(const Fraction &rhs) const;
+    bool operator<(const Fraction &rhs) const;
+    bool operator>=(const Fraction &rhs) const;
+    bool operator<=(const Fraction &rhs) const;
 
-    bool operator==(int rhs);
-    bool operator!=(int rhs);
-    bool operator>(int rhs);
-    bool operator<(int rhs);
-    bool operator>=(int rhs);
-    bool operator<=(int rhs);
+    bool operator==(int rhs) const;
+    bool operator!=(int rhs) const;
+    bool operator>(int rhs) const;
+    bool operator<(int rhs) const;
+    bool operator>=(int rhs) const;
+    bool operator<=(int rhs) const;
 
 private:
-    int calcGCD(int n1, int n2);
-    int compare(const Fraction &fraction);
+    int calcGCD(int n1, int n2) const;
+    int compare(const Fraction &fraction) const;
 
     int m_numerator;
     int m_denominator;

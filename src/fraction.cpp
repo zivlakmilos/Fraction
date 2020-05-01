@@ -178,73 +178,73 @@ Fraction Fraction::operator-(int rhs) const
     return *this - fraction;
 }
 
-bool Fraction::operator==(const Fraction &rhs)
+bool Fraction::operator==(const Fraction &rhs) const
 {
     return compare(rhs) == 0;
 }
 
-bool Fraction::operator!=(const Fraction &rhs)
+bool Fraction::operator!=(const Fraction &rhs) const
 {
     return !(*this == rhs);
 }
 
-bool Fraction::operator>(const Fraction &rhs)
+bool Fraction::operator>(const Fraction &rhs) const
 {
     return compare(rhs) > 0;
 }
 
-bool Fraction::operator<(const Fraction &rhs)
+bool Fraction::operator<(const Fraction &rhs) const
 {
     return compare(rhs) < 0;
 }
 
-bool Fraction::operator>=(const Fraction &rhs)
+bool Fraction::operator>=(const Fraction &rhs) const
 {
     return !(*this < rhs);
 }
 
-bool Fraction::operator<=(const Fraction &rhs)
+bool Fraction::operator<=(const Fraction &rhs) const
 {
     return !(*this > rhs);
 }
 
-bool Fraction::operator==(int rhs)
+bool Fraction::operator==(int rhs) const
 {
     Fraction fraction(rhs);
     return *this == fraction;
 }
 
-bool Fraction::operator!=(int rhs)
+bool Fraction::operator!=(int rhs) const
 {
     Fraction fraction(rhs);
     return *this != fraction;
 }
 
-bool Fraction::operator>(int rhs)
+bool Fraction::operator>(int rhs) const
 {
     Fraction fraction(rhs);
     return *this > fraction;
 }
     
-bool Fraction::operator<(int rhs)
+bool Fraction::operator<(int rhs) const
 {
     Fraction fraction(rhs);
     return *this < fraction;
 }
     
-bool Fraction::operator>=(int rhs)
+bool Fraction::operator>=(int rhs) const
 {
     Fraction fraction(rhs);
     return *this >= fraction;
 }
     
-bool Fraction::operator<=(int rhs)
+bool Fraction::operator<=(int rhs) const
 {
     Fraction fraction(rhs);
     return *this <= fraction;
 }
 
-int Fraction::calcGCD(int n1, int n2)
+int Fraction::calcGCD(int n1, int n2) const
 {
     while (n2 != 0)
     {
@@ -258,7 +258,7 @@ int Fraction::calcGCD(int n1, int n2)
     return n1;
 }
 
-int Fraction::compare(const Fraction &fraction)
+int Fraction::compare(const Fraction &fraction) const
 {
     int lhs = m_numerator * fraction.m_denominator;
     int rhs = fraction.m_numerator * m_denominator;
